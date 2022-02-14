@@ -6,7 +6,6 @@ class Solution {
 
     public int[] solution(int n, int[] info) {
         dfs(n, info);
-        System.out.println(maxDiff);
         if(maxDiff>0) return maxResult;
         else return new int[] {-1};
     }
