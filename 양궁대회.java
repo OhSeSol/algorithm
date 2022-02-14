@@ -1,8 +1,8 @@
 class Solution {
-    static boolean[] visited = new boolean[11];
-    static int[] result = new int[11];
-    static int[] maxResult = new int[11];
-    static int maxDiff = 0;
+    boolean[] visited = new boolean[11];
+    int[] result = new int[11];
+    int[] maxResult = new int[11];
+    int maxDiff = 0;
 
     public int[] solution(int n, int[] info) {
         dfs(n, info);
