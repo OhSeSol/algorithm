@@ -106,3 +106,50 @@ static void divide(int n, int[] capacity, int[] out, int start){
     }     
   }
 }
+
+
+/*
+바로 다음 큰 수 찾기
+ex) 1234
+1. 1의 자리부터 증가하는 순열의 끝 : A
+2. A의 왼쪽 자리 수 : B
+3. 1의 자리부터 최초로 발견된 B보다 큰 수 : C
+4. B와 C의 자리 교환
+5. 1의 자리 ~ A의 자리 순서를 뒤집음
+*/
+
+static boolean nextPermutation(int[] arr){
+        int a = -1;
+        int b = -1;
+        int c = -1;
+        for (int i = arr.length-1; i >= 1 ; i--) {
+            if(arr[i]>arr[i-1]){
+                a = i;
+                if(a>0){
+                  b = i-1;
+                }
+                break;
+            }
+        }
+        if(a==-1){
+            return false;
+        }
+        for (int i = arr.length-1; i >= a; i--) {
+            if(arr[i]>arr[b]){
+               c = i;
+               break;
+            }
+        }
+        swap(arr, b, c);
+        for (int i = a, j = arr.length-1; i <= (a+arr.length-1)/2; i++) {
+            swap(arr, i, j--);
+        }
+        return true;
+
+    }
+
+    static void swap(int[] arr, int x, int y){
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
+    }
