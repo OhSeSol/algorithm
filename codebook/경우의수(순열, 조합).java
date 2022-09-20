@@ -15,7 +15,7 @@ static void permutation(int[] arr, int r, boolean[] visited, int[] out, int dept
     if(!visited[i]){
       visited[i] = true;
       out[depth] = arr[i];
-      permutaion(arr, r, visited, out, depth+1);
+      permutation(arr, r, visited, out, depth+1);
       visited[i] = false;
     }
   }
