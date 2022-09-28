@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 
-
+//시간복잡도 O(ElogE) -> 간선이 적을 때 유용
 public class 크루스칼 {
 
     public static void main(String[] args) throws IOException {
